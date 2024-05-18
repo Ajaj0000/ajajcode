@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 
 function Caps(props) {
-
+    
     const [card, setcard] = useState(ProCaps)
     const [filterr, setfilterr] = useState([...card])
 

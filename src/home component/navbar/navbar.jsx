@@ -15,13 +15,15 @@ import { Cartsection } from "../../common/cartsection";
 import { GiCancel } from "react-icons/gi";
 import { auth } from "../../firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { IoPerson } from "react-icons/io5";
+import { ProCaps } from "../../data/productData";
 
 
 function Navbar(props) {
 
 
     // const [value , setvalue] = useState()
-    const [user] =useAuthState(auth)
+    const [user] = useAuthState(auth)
     const [toggle, settoggle] = useState(false)
     const { totalUniqueItems } = useCart()
     const [cart, setcart] = useState(false)
@@ -39,7 +41,7 @@ function Navbar(props) {
     function btn2() {
         settoggle(false)
     }
-    function InputSearch(e){
+    function InputSearch(e) {
         // setvalue(e.target.value)
         props.send(e.target.value)
     }
@@ -61,6 +63,19 @@ function Navbar(props) {
     //     moon1.style.display="block"
     //     moon2.style.display="none"
     //  }
+    // const [NavBot, setNavBot] = useState(ProCaps)
+    // const [fa, setfa] = useState([])
+    // const 
+
+    // const getCap = (e) => {
+    //     const inn = e.target.value
+    //     const getpro = NavBot.filter((itm) => itm.caption.toLowerCase().includes(inn))
+    //     if (getpro) {
+    //         setfa(getpro)
+    //     } else if(inn === ' '){
+    //         setfa('')
+    //     }
+    // }
 
     const Logout = () => {
         auth.signOut();
@@ -82,6 +97,20 @@ function Navbar(props) {
                     <div className="main-search">
                         <input type="text" placeholder="Search here" onChange={InputSearch}/>
                         <button><AiOutlineSearch /></button>
+                        {/* <div className="class-none">
+                            {
+                                fa.map((itm) => {
+                                    return (
+                                        <>
+                                            <div className="flex">
+                                                <img src={itm.proimg} alt="" />
+                                                <h2>{itm.caption}</h2>
+                                            </div>
+                                        </>
+                                    )
+                                })
+                            }
+                        </div> */}
                     </div>
 
                     <div className="head">
@@ -89,9 +118,9 @@ function Navbar(props) {
                             <Link to="/tshirt"><li id="n1">
                                 T-Shirts<FaAngleDown />
                                 <div className="hover-tshirt">
-                                    <Link to="/tshirt"><h4>T-Shirts</h4></Link>
-                                    <Link to="/polotshirt"><h4>PoloTshirts</h4></Link>
-                                    <Link to="/oversized"><h4>OversizedTshirts</h4></Link>
+                                    <Link to="/hoodies"><h4>T-Shirts</h4></Link>
+                                    <Link to="/hoodies"><h4>PoloTshirts</h4></Link>
+                                    <Link to="/hoodies"><h4>OversizedTshirts</h4></Link>
                                 </div>
                             </li></Link>
 
@@ -116,8 +145,7 @@ function Navbar(props) {
                         </p>
                         {/* </Link> */}
                         {
-                            user ?  <button onClick={Logout}>Logout</button> : <Link to="/"><button>Login</button></Link>
-                           
+                            user ? <button onClick={Logout}><IoPerson /></button> : <Link to="/"><button>Login</button></Link>
                         }
                         <span id="dark-mood"><BsMoonStarsFill /></span>
                     </div>
@@ -147,6 +175,15 @@ function Navbar(props) {
                 <Cartsection />
                 {/* <p onClick={cartbtn2}></p> */}
             </div>
+
+
+
+
+
+
+
+
+
 
 
             {/* respomsive content ..................... */}

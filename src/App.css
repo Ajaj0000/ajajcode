@@ -237,8 +237,25 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+.navbar .main-search .class-none{
+    position: absolute;
+    top: 40px !important;
+    z-index: 5;
+    width: 100%;
+    overflow: scroll;
+    background-color: whitesmoke;
+}
+.navbar .main-search .class-none .flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.navbar .main-search .class-none img{
+    width: 20%;
+}
 .navbar .site-logo {
     width: 15%;
 }

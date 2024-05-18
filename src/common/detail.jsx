@@ -16,7 +16,7 @@ function Detail() {
     const [isloading, setisloading] = useState(true)
     const { getdetail } = useParams()
     const info = ProCaps.find((itm) => itm.id == getdetail)
-    
+
     const [getimg, setgetimg] = useState(info.proimg)
     const { addItem, inCart } = useCart()
 
@@ -47,15 +47,15 @@ function Detail() {
     };
 
     // input search 
-    const [Allsell , setAllsell] = useState(Selling)
-    const [filterSell , setfilterSell] = useState([...Allsell])
+    const [Allsell, setAllsell] = useState(Selling)
+    const [filterSell, setfilterSell] = useState([...Allsell])
 
-    const get=(e)=>{
+    const get = (e) => {
         const inn = e
-        const getdata = Allsell.filter((itmm)=>itmm.caption.toLowerCase().includes(inn))
-        if(inn){
+        const getdata = Allsell.filter((itmm) => itmm.caption.toLowerCase().includes(inn))
+        if (inn) {
             setfilterSell(getdata)
-        }else{
+        } else {
             setfilterSell(Allsell)
         }
     }
@@ -96,7 +96,7 @@ function Detail() {
                     </>
                     :
                     <>
-                        <Navbar send={get}/>
+                        <Navbar send={get} />
                         <div className="information">
                             <div className="detail" key={info.id}>
                                 <div className="cap-btn">
@@ -106,9 +106,10 @@ function Detail() {
                                     <div className="detail-pro" onClick={() => { changeimg(info.prohoverimg) }}>
                                         <img src={info.prohoverimg} alt="" className="img-btn2" />
                                     </div>
-                                    <div style={{ border: info.border }} className="detail-pro" onClick={() => { changeimg(info.pro3img) }}>
-                                     {(info.pro3img) ? <img src={info.pro3img} alt="" className="img-btn3" /> : ""}   
-                                    </div>
+                                    {(info.pro3img) ? <div style={{ border: info.border }} className="detail-pro" onClick={() => { changeimg(info.pro3img) }}>
+                                        <img src={info.pro3img} alt="" className="img-btn3" />
+                                    </div> : ""}
+
                                 </div>
                                 <div className="detail-img">
                                     <div className={`${getimg} dele-img`}>

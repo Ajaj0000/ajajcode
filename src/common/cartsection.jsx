@@ -4,9 +4,12 @@ import { GiCancel } from "react-icons/gi";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase/firebase";
 
 
 function Cartsection() {
+    const [user] = useAuthState(auth)
     const { items, isEmpty, removeItem,cartTotal, updateItemQuantity } = useCart()
 
     if (isEmpty) {
@@ -68,7 +71,7 @@ function Cartsection() {
                         }
                         <div className="cart-bottom">
                             <h3>Subtotal: <FaIndianRupeeSign/>{cartTotal}</h3>
-                            <Link to="/checkout"><button>checkout</button></Link>
+                            { (user) ? <Link to="/checkout"><button>checkout</button></Link> : <Link to="/"><button>checkout</button></Link>}
                             <button onClick={() => { removeItem(items) }}>clear</button>
                         </div>
                     </div>

@@ -10,7 +10,10 @@ function Pay(){
 
     return(
         <>
-        <QRCode value={`upi://pay?pa=8290780903@ibl&pn=lntellemo&tn=cftrhwetaw4gta&am=${cartTotal}`}
+        {/* value={`upi://pay?pa=8290780903@ibl&pn=lntellemo&tn=cftrhwetaw4gta&am=${cartTotal}`} */}
+
+        <QRCode value={`upi://pay?pa=829078090@ybl&pn=Intellemo&tn=cftrhwetaw4gta&am=${cartTotal}`}
+        
                     size="300"
                     logoHeight="300"
                     logoWidth="300"

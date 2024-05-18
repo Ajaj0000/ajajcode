@@ -21,6 +21,8 @@ import { Pay } from './common/payment';
 
 
 function App() {
+  
+
   return (
     <>
       <CartProvider>
@@ -33,6 +35,8 @@ function App() {
             <Route path='/' element={<MainFirebase />} />
 
             <Route path='/home' element={<Home />} />
+
+            <Route path='*' element={<CapsSection/>}/>
 
             <Route path='/caps' element={<CapsSection />} />
 
@@ -53,6 +57,8 @@ function App() {
             <Route path='/checkout' element={<Checkout/>}/>
 
             <Route path='/payment' element={<Pay/>}/>
+
+            {/* <Route path='/postcaps' element={<PostCapsData/>}/> */}
             
           </Routes>
         </BrowserRouter>

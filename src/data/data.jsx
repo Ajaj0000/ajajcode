@@ -40,22 +40,22 @@ const Nav=[
     {
         id:"n3",
         category:"Sweatshirts",
-        path:"/sweatshirt",
+        path:"/caps",
     },
     {
         id:"n4",
         category:"Mugs",
-        path:"/mugs",
+        path:"/caps",
     },
     {
         id:"n5",
         category:"Zipper Hoodies",
-        path:"/hoodies",
+        path:"/caps",
     },
     {
         id:"n6",
         category:"Mousepads",
-        path:"/mousepads",
+        path:"/caps",
     },
     {
         id:"n7",
@@ -73,7 +73,7 @@ const Category=[
     {
         id:2,
         cat:`${img2}`,
-        path:"/oversize-tshirt",
+        path:"/caps",
     },
     {
         id:3,
@@ -83,7 +83,7 @@ const Category=[
     {
         id:4,
         cat:`${img4}`,
-        path:"/mousepad",
+        path:"/caps",
     },
     {
         id:5,
